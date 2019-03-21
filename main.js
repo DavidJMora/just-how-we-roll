@@ -56,7 +56,20 @@ function setStartingImages() {
 # = Roll Functions
 # ========================================================
 */
-
+function rollD6() {
+    const min = Math.ceil(1);
+    let randomNumber = Math.ceil(Math.random() * (min + 5));
+    sixes.push(randomNumber);
+    for(let i = 0; i < sixes.length; i++) {
+        const sixesMean = sixes.reduce(sixes);
+    }
+    console.log(randomNumber);
+    console.log(sixesMean);
+}
+function rollDoubleD6() {}
+function rollD12() {}
+function rollD20() {}
+function resetAllRolls() {}
 /*
 # ========================================================
 # = Math Functions
