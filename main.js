@@ -102,14 +102,20 @@ function rollDoubleD6() {
     doubleSixes.push(randomRoll);
     const randomRoll2 = getRandomRoll(1, 5);
     doubleSixes.push(randomRoll2);
-    const mean = CalcMean(doubleSixes);
-    console.log(mean);
+    const mean = calcMean(doubleSixes);
     document.querySelector('#double-d6-rolls-mean').innerText = mean;
-    const median = CalcMedian(doubleSixes);
+    const median = calcMedian(doubleSixes);
     document.querySelector('#double-d6-rolls-median').innerText = median;
 
 }
-function rollD12() {}
+function rollD12() {
+    const randomNumber = getRandomRoll(1, 11);
+    twelves.push(randomNumber);
+    const mean = calcMean(twelves);
+    document.querySelector('#d12-rolls-mean').innerText = mean;
+    const median = calcMedian(twelves);
+    document.querySelector('#d12-rolls-median').innerText = median;
+}
 function rollD20() {}
 function resetAllRolls() {}
 /*
@@ -123,12 +129,12 @@ function getRandomRoll (a, b) {
     return randomNumber;
 }
 
-function CalcMean (array) {
+function calcMean (array) {
     const sum = array.reduce((a,b) => a + b, 0);
     return (sum / array.length).toFixed(2);
 }
 
-function CalcMedian (array) {
+function calcMedian (array) {
     array.sort(function(a,b) {return a-b;} );
     const median = Math.floor(array.length/2);
 
@@ -138,7 +144,6 @@ function CalcMedian (array) {
        return (array[median - 1] + ' / ' + array[median]);
     }
 
-    
 }
 
 /*
