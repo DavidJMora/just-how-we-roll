@@ -64,7 +64,6 @@ function rollD6() {
     sixes.sort(function(a,b) {return a-b;} );
     const median = Math.floor(sixes.length/2);
     document.querySelector('#d6-rolls-mean').innerText = (sixesMean / sixes.length).toFixed(2);
-    console.log(sixes);
     switch(randomNumber) {
         case 1:
         document.querySelector('#d6-roll').src = './images/d6/1.png';
@@ -104,7 +103,10 @@ function rollDoubleD6() {
     const randomRoll2 = getRandomRoll(1, 5);
     doubleSixes.push(randomRoll2);
     const mean = CalcMean(doubleSixes);
+    console.log(mean);
     document.querySelector('#double-d6-rolls-mean').innerText = mean;
+    const median = CalcMedian(doubleSixes);
+    document.querySelector('#double-d6-rolls-median').innerText = median;
 
 }
 function rollD12() {}
@@ -126,8 +128,17 @@ function CalcMean (array) {
     return (sum / array.length).toFixed(2);
 }
 
-function CalcMedian () {
+function CalcMedian (array) {
+    array.sort(function(a,b) {return a-b;} );
+    const median = Math.floor(array.length/2);
 
+    if(array.length % 2) {
+       return array[median];
+    }else {
+       return (array[median - 1] + ' / ' + array[median]);
+    }
+
+    
 }
 
 /*
