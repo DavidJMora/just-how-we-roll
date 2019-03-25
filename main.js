@@ -99,8 +99,8 @@ function rollD6() {
     }
 }
 function rollDoubleD6() {
-    getRandomRoll();
-    getRandomRoll();
+    getRandomRoll(1, 5);
+    getRandomRoll(1, 5);
 
 }
 function rollD12() {}
@@ -111,15 +111,19 @@ function resetAllRolls() {}
 # = Math Functions
 # ========================================================
 */
-function getRandomRoll () {
-    let min = Math.ceil(1);
-    let randomNumber = Math.ceil(Math.random() * (min + 5));
+function getRandomRoll (a, b) {
+    let min = Math.ceil(a);
+    let randomNumber = Math.ceil(Math.random() * (min + b));
     return doubleSixes.push(randomNumber);
 }
 
 function CalcMean () {
     const mean = doubleSixes.reduce((a,b) => a + b, 0);
     return (mean / doubleSixes.length).toFixed(2);
+}
+
+function CalcMedian () {
+
 }
 
 /*
