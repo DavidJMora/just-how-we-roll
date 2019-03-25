@@ -99,8 +99,12 @@ function rollD6() {
     }
 }
 function rollDoubleD6() {
-    getRandomRoll(1, 5);
-    getRandomRoll(1, 5);
+    const randomRoll = getRandomRoll(1, 5);
+    doubleSixes.push(randomRoll);
+    const randomRoll2 = getRandomRoll(1, 5);
+    doubleSixes.push(randomRoll2);
+    const mean = CalcMean(doubleSixes);
+    document.querySelector('#double-d6-rolls-mean').innerText = mean;
 
 }
 function rollD12() {}
@@ -114,12 +118,12 @@ function resetAllRolls() {}
 function getRandomRoll (a, b) {
     let min = Math.ceil(a);
     let randomNumber = Math.ceil(Math.random() * (min + b));
-    return doubleSixes.push(randomNumber);
+    return randomNumber;
 }
 
-function CalcMean () {
-    const mean = doubleSixes.reduce((a,b) => a + b, 0);
-    return (mean / doubleSixes.length).toFixed(2);
+function CalcMean (array) {
+    const sum = array.reduce((a,b) => a + b, 0);
+    return (sum / array.length).toFixed(2);
 }
 
 function CalcMedian () {
