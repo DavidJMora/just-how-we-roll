@@ -116,7 +116,14 @@ function rollD12() {
     const median = calcMedian(twelves);
     document.querySelector('#d12-rolls-median').innerText = median;
 }
-function rollD20() {}
+function rollD20() {
+    const randomNumber = getRandomRoll(1, 19);
+    twenties.push(randomNumber);
+    const mean = calcMean(twenties);
+    document.querySelector('#d20-rolls-mean').innerText = mean;
+    const median = calcMedian(twenties);
+    document.querySelector('#d20-rolls-median').innerText = median;
+}
 function resetAllRolls() {}
 /*
 # ========================================================
