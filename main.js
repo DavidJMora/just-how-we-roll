@@ -107,6 +107,60 @@ function rollDoubleD6() {
     const median = calcMedian(doubleSixes);
     document.querySelector('#double-d6-rolls-median').innerText = median;
 
+    switch(randomRoll) {
+        case 1:
+        document.querySelector('#double-d6-roll-1').src = './images/d6/1.png';
+        break;
+
+        case 2:
+        document.querySelector('#double-d6-roll-1').src = './images/d6/2.png';
+        break;
+
+        case 3:
+        document.querySelector('#double-d6-roll-1').src = './images/d6/3.png';
+        break;
+
+        case 4:
+        document.querySelector('#double-d6-roll-1').src = './images/d6/4.png';
+        break;
+
+        case 5:
+        document.querySelector('#double-d6-roll-1').src = './images/d6/5.png';
+        break;
+
+        case 6:
+        document.querySelector('#double-d6-roll-1').src = './images/d6/6.png';
+        break;
+        
+    }
+    
+    switch(randomRoll2) {
+        case 1:
+        document.querySelector('#double-d6-roll-2').src = './images/d6/1.png';
+        break;
+
+        case 2:
+        document.querySelector('#double-d6-roll-2').src = './images/d6/2.png';
+        break;
+
+        case 3:
+        document.querySelector('#double-d6-roll-2').src = './images/d6/3.png';
+        break;
+
+        case 4:
+        document.querySelector('#double-d6-roll-2').src = './images/d6/4.png';
+        break;
+
+        case 5:
+        document.querySelector('#double-d6-roll-2').src = './images/d6/5.png';
+        break;
+
+        case 6:
+        document.querySelector('#double-d6-roll-2').src = './images/d6/6.png';
+        break;
+        
+    }
+
 }
 function rollD12() {
     const randomNumber = getRandomRoll(1, 11);
