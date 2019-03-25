@@ -60,16 +60,49 @@ function rollD6() {
     const min = Math.ceil(1);
     let randomNumber = Math.ceil(Math.random() * (min + 5));
     sixes.push(randomNumber);
-    // console.log(`RandomNumber: ${randomNumber}`);
     const sixesMean = sixes.reduce((a,b) => a + b, 0);
-    
-    // console.log(`Total: ${sixesMean}`);
+    sixes.sort(function(a,b) {return a-b;} );
+    const median = Math.floor(sixes.length/2);
     document.querySelector('#d6-rolls-mean').innerText = (sixesMean / sixes.length).toFixed(2);
-    // console.log(`Average: ${document.querySelector('#d6-rolls-mean').innerText = (sixesMean / sixes.length).toFixed(2)}`);
-    // console.log(`Length: ${sixes.length}`)
-    
+    console.log(sixes);
+    switch(randomNumber) {
+        case 1:
+        document.querySelector('#d6-roll').src = './images/d6/1.png';
+        break;
+
+        case 2:
+        document.querySelector('#d6-roll').src = './images/d6/2.png';
+        break;
+
+        case 3:
+        document.querySelector('#d6-roll').src = './images/d6/3.png';
+        break;
+
+        case 4:
+        document.querySelector('#d6-roll').src = './images/d6/4.png';
+        break;
+
+        case 5:
+        document.querySelector('#d6-roll').src = './images/d6/5.png';
+        break;
+
+        case 6:
+        document.querySelector('#d6-roll').src = './images/d6/6.png';
+        break;
+        
+    }
+
+    if(sixes.length % 2) {
+        document.querySelector('#d6-rolls-median').innerText = sixes[median];
+    }else {
+        document.querySelector('#d6-rolls-median').innerText = (sixes[median - 1] + ' / ' + sixes[median]);
+    }
 }
-function rollDoubleD6() {}
+function rollDoubleD6() {
+    getRandomRoll();
+    getRandomRoll();
+
+}
 function rollD12() {}
 function rollD20() {}
 function resetAllRolls() {}
@@ -78,6 +111,16 @@ function resetAllRolls() {}
 # = Math Functions
 # ========================================================
 */
+function getRandomRoll () {
+    let min = Math.ceil(1);
+    let randomNumber = Math.ceil(Math.random() * (min + 5));
+    return doubleSixes.push(randomNumber);
+}
+
+function CalcMean () {
+    const mean = doubleSixes.reduce((a,b) => a + b, 0);
+    return (mean / doubleSixes.length).toFixed(2);
+}
 
 /*
 # ========================================================
